@@ -170,10 +170,10 @@
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 840px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1160px;
   margin: 0 auto;
-  gap: 36px;
+  gap: 24px;
   z-index: 3;
   padding: 0 20px;
 }
@@ -294,10 +294,10 @@
 /* ── ROAD DESTINATION CARDS (Company & Designation Only) ── */
 .highway-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 840px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1160px;
   margin: 10px auto 0;
-  gap: 36px;
+  gap: 24px;
   align-items: stretch;
   position: relative;
   z-index: 2;
@@ -468,10 +468,27 @@
   border-radius: 4px;
 }
 
+/* Experience Description List */
+.card-experience-desc {
+  margin: 16px 0 0;
+  padding-left: 18px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-experience-desc li {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 /* ── RESPONSIVE ADAPTATIONS: MOBILE TOP-TO-BOTTOM ROAD STRUCTURE ── */
 @media (max-width: 1024px) {
   .highway-cards-grid {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
     overflow-x: auto;
     padding-bottom: 20px;
     scroll-snap-type: x mandatory;

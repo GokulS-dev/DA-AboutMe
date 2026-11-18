@@ -53,7 +53,7 @@ const Navbar = ({ activeSection, onOpenResume, theme, toggleTheme, visible = tru
           >
             <span className="brand-title">GOKUL S</span>
           </button>
-          <span className="brand-badge">SDE</span>
+          <span className="brand-badge">DATA ANALYST</span>
         </div>
 
         {/* Desktop Navigation Links */}

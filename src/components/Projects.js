@@ -7,16 +7,85 @@ import {
   FaChevronLeft,
   FaChevronRight
 } from "react-icons/fa";
-import p1Img from "../assets/p1.jpeg";
-import p2Img from "../assets/p2.jpeg";
-import p3Img from "../assets/p3.jpeg";
-import kafkaImg from "../assets/pp1.jpeg";
-import p4Img from "../assets/p4.jpeg";
-import p5Img from "../assets/p5.jpeg";
-import p6Img from "../assets/p6.jpeg";
 import "./Projects.css";
 
-const featuredProjects = [
+const analyticsProjects = [
+  {
+    num: "01",
+    collapsedLabel: "SALES INTELLIGENCE",
+    title: "Enterprise Sales Performance & Revenue Intelligence System",
+    client: "Revenue & Profitability Intelligence",
+    badge: "EXECUTIVE DASHBOARD",
+    stack: ["Microsoft Excel", "KPI Reporting", "PivotTables", "Data Cleaning"],
+    summary: "Analyzed 1,262 synthetic sales records using data cleaning, validation, revenue analysis, profitability analysis, KPI calculations and an executive dashboard featuring 7 charts.",
+    description: "Analyzed 1,262 synthetic sales records using data cleaning, validation, revenue analysis, profitability analysis, KPI calculations and an executive dashboard featuring 7 charts to support data-driven business decisions.",
+    highlights: [
+      "Data Cleaning & Validation",
+      "Revenue and Profit Analysis",
+      "Regional and Product Performance",
+      "KPI Reporting",
+      "Executive Dashboard"
+    ],
+    github: "https://github.com/GokulS-dev/Enterprise-Sales-Performance-Revenue-Intelligence-System",
+    tagline: "Enterprise Revenue Intelligence",
+  },
+  {
+    num: "02",
+    collapsedLabel: "SALES OPERATIONS MIS",
+    title: "Sales Operations MIS & Monthly Performance Reporting",
+    client: "Operations & Performance Monitoring",
+    badge: "MIS REPORTING",
+    stack: ["Microsoft Excel", "PivotTables", "PivotCharts", "Operations Tracking"],
+    summary: "Developed an Excel-based MIS reporting system using 900 synthetic sales records for daily sales tracking, monthly reporting, employee performance monitoring and operational exception tracking.",
+    description: "Developed an Excel-based MIS reporting system using 900 synthetic sales records for daily sales tracking, monthly reporting, employee performance monitoring and operational exception tracking.",
+    highlights: [
+      "Monthly MIS Reporting",
+      "PivotTables & PivotCharts",
+      "Employee Target Achievement",
+      "Pending and Cancelled Order Tracking",
+      "Management Dashboard"
+    ],
+    tagline: "Sales MIS & Performance Monitoring",
+  },
+  {
+    num: "03",
+    collapsedLabel: "REGIONAL SALES",
+    title: "Sales Performance & Regional Insights Dashboard",
+    client: "Sales Analytics Solution",
+    badge: "TABLEAU DASHBOARD",
+    stack: ["PostgreSQL", "SQL", "Tableau"],
+    summary: "Building a sales analytics solution using PostgreSQL and SQL to analyze revenue trends, regional performance, product contribution and monthly sales growth, with interactive Tableau dashboards.",
+    description: "Building a sales analytics solution using PostgreSQL and SQL to analyze revenue trends, regional performance, product contribution and monthly sales growth, with interactive Tableau dashboards.",
+    highlights: [
+      "Revenue Trends & Growth Analytics",
+      "Regional Sales Distribution Analysis",
+      "Product Contribution Matrix",
+      "PostgreSQL Relational Schema",
+      "Interactive Tableau Dashboards"
+    ],
+    tagline: "Regional Sales & Revenue Analytics",
+  },
+  {
+    num: "04",
+    collapsedLabel: "CUSTOMER & PRODUCT",
+    title: "Customer & Product Analytics Dashboard",
+    client: "Customer Intelligence Platform",
+    badge: "CUSTOMER ANALYTICS",
+    stack: ["PostgreSQL", "SQL", "Tableau"],
+    summary: "Developing customer and product analytics using SQL to examine purchasing patterns, order frequency, customer segments and product performance, with Tableau visualizations.",
+    description: "Developing customer and product analytics using SQL to examine purchasing patterns, order frequency, customer segments and product performance, with Tableau visualizations.",
+    highlights: [
+      "Purchasing Pattern Examination",
+      "Order Frequency & Recency Modeling",
+      "Customer Segmentation Models",
+      "Product Velocity & Performance",
+      "Tableau Visualizations"
+    ],
+    tagline: "Customer Segments & Product Analytics",
+  }
+];
+
+const webProjects = [
   {
     num: "01",
     collapsedLabel: "DIGITAL TRIAL CARD",
@@ -32,7 +101,6 @@ const featuredProjects = [
       "Automated stage-transition triggers, event notifications, and email alerts",
       "High-integrity SQL Server relational schema for heavy industrial throughput"
     ],
-    image: p1Img,
     tagline: "Industrial Manufacturing Digitization",
   },
   {
@@ -51,7 +119,6 @@ const featuredProjects = [
       "MongoDB aggregation pipeline for student performance analytics"
     ],
     github: "https://github.com/GokulS-dev/online_exam_portal",
-    image: p3Img,
     tagline: "Secure Real-Time Assessment Engine",
   },
   {
@@ -70,7 +137,6 @@ const featuredProjects = [
       "Profile portfolio generator showcasing verified accomplishments"
     ],
     github: "https://github.com/GokulS-dev/Student_Activity_Point_Calc",
-    image: p2Img,
     tagline: "Institutional Verification Ledger",
   },
   {
@@ -88,7 +154,6 @@ const featuredProjects = [
       "Low-latency throughput optimization for event stream processing"
     ],
     github: "https://github.com/GokulS-dev/StreamlineProcessing_Using_KAFKA",
-    image: kafkaImg,
     tagline: "Distributed Data Stream Engine",
   },
   {
@@ -107,7 +172,6 @@ const featuredProjects = [
     ],
     github: "https://github.com/GokulS-dev/ISTE-Events",
     link: "https://iste-events.netlify.app/",
-    image: p4Img,
     tagline: "National Technical Symposiums",
   }
 ];
@@ -122,7 +186,6 @@ const additionalProjects = [
     summary: "Real-time meteorological analytics dashboard with time-series aggregation.",
     github: "https://github.com/GokulS-dev/Weather-Monitoring",
     link: "https://weather-monitoring-we31.onrender.com/",
-    image: p5Img,
   },
   {
     num: "07",
@@ -131,17 +194,23 @@ const additionalProjects = [
     stack: ["Flutter", "Dart", "Firebase Auth", "Firestore"],
     summary: "Cross-platform mobile utility system streamlining everyday societal tasks.",
     github: "https://github.com/GokulS-dev/SmartEzyGo",
-    image: p6Img,
   }
 ];
 
 const Projects = () => {
-  // Default expanded card is Card 0 (or 2)
+  const [activeCategory, setActiveCategory] = useState("analytics");
   const [activeIdx, setActiveIdx] = useState(0);
   const [activeModalProject, setActiveModalProject] = useState(null);
   const [showArchive, setShowArchive] = useState(false);
 
-  const total = featuredProjects.length;
+  const currentProjects = activeCategory === "analytics" ? analyticsProjects : webProjects;
+  const total = currentProjects.length;
+
+  const handleCategoryChange = (cat) => {
+    if (cat === activeCategory) return;
+    setActiveCategory(cat);
+    setActiveIdx(0);
+  };
 
   const handlePrev = () => {
     setActiveIdx((prev) => (prev > 0 ? prev - 1 : total - 1));
@@ -162,17 +231,23 @@ const Projects = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   });
 
+  const isAnalytics = activeCategory === "analytics";
+  const headerTitle = isAnalytics
+    ? "DATA ANALYTICS & BUSINESS INTELLIGENCE"
+    : "ENGINEERED SYSTEMS & PRODUCTS";
+  const headerSubtitle = isAnalytics
+    ? "Transforming raw data into actionable insights through Excel, SQL, PostgreSQL and Tableau."
+    : "Reliable web applications, production workflows, and distributed backends.";
+
   return (
     <section id="work" className="projects-section">
       <div className="projects-container">
-        {/* Section Header (matching reference layout) */}
+        {/* Section Header */}
         <div className="collection-header-row">
           <div className="collection-header-text">
             <span className="collection-meta-tag">✦ DISCOVER SELECTED WORK</span>
-            <h2 className="collection-main-title">ENGINEERED SYSTEMS & PRODUCTS</h2>
-            <p className="collection-sub-text">
-              Reliable web applications, production workflows, and distributed backends.
-            </p>
+            <h2 className="collection-main-title">{headerTitle}</h2>
+            <p className="collection-sub-text">{headerSubtitle}</p>
           </div>
 
           {/* Top-Right Stepper & Counter */}
@@ -199,9 +274,37 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* Project Category Navigation Tabs */}
+        <div className="category-nav-bar">
+          <div className="project-category-tabs" role="tablist" aria-label="Project Categories">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === "analytics"}
+              className={`category-tab-btn ${activeCategory === "analytics" ? "active" : ""}`}
+              onClick={() => handleCategoryChange("analytics")}
+            >
+              <span className="tab-indicator" />
+              <span>DATA ANALYTICS</span>
+              <span className="category-count">04</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === "web"}
+              className={`category-tab-btn ${activeCategory === "web" ? "active" : ""}`}
+              onClick={() => handleCategoryChange("web")}
+            >
+              <span className="tab-indicator" />
+              <span>WEB DEVELOPMENT</span>
+              <span className="category-count">05</span>
+            </button>
+          </div>
+        </div>
+
         {/* ── EXPANDING FLOATING HORIZONTAL STACK DECK ── */}
         <div className="expanding-cards-deck">
-          {featuredProjects.map((project, idx) => {
+          {currentProjects.map((project, idx) => {
             const isExpanded = idx === activeIdx;
             const isLeftmostInDeck = idx === 0 || (activeIdx === 0 && idx === 1);
             const isRightmostInDeck = idx === total - 1 || (activeIdx === total - 1 && idx === total - 2);
@@ -229,13 +332,8 @@ const Projects = () => {
                 aria-label={project.title}
                 onKeyDown={(e) => e.key === "Enter" && setActiveIdx(idx)}
               >
-                {/* Background Image with Gradient Overlay */}
+                {/* Card Background */}
                 <div className="card-bg-wrap">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="card-bg-image"
-                  />
                   <div className="card-scrim-gradient" />
                 </div>
 
@@ -329,38 +427,51 @@ const Projects = () => {
         </div>
 
         {/* Secondary Work Archive Toggle */}
-        <div className="deck-archive-toggle">
-          <button
-            className="archive-toggle-btn"
-            onClick={() => setShowArchive(!showArchive)}
-          >
-            <span>{showArchive ? "Hide Additional Projects" : "View More Works & IoT Dashboards (2)"}</span>
-            <span className="toggle-sym">{showArchive ? "↑" : "↓"}</span>
-          </button>
-        </div>
+        {activeCategory === "web" && (
+          <div className="deck-archive-toggle">
+            <button
+              className="archive-toggle-btn"
+              onClick={() => setShowArchive(!showArchive)}
+            >
+              <span>{showArchive ? "Hide Additional Projects" : "View More Works & IoT Dashboards (2)"}</span>
+              <span className="toggle-sym">{showArchive ? "↑" : "↓"}</span>
+            </button>
+          </div>
+        )}
 
         {/* Secondary Projects Grid */}
-        {showArchive && (
+        {activeCategory === "web" && showArchive && (
           <div className="additional-projects-grid">
             {additionalProjects.map((item) => (
-              <div key={item.num} className="additional-card-item">
-                <div className="add-img-wrap" onClick={() => setActiveModalProject(item)}>
-                  <img src={item.image} alt={item.title} className="add-img" />
-                  <span className="add-num">{item.num}</span>
-                </div>
+              <div key={item.num} className="additional-card-item" onClick={() => setActiveModalProject(item)}>
                 <div className="add-body">
-                  <span className="add-cat">{item.category}</span>
+                  <div className="add-header-row">
+                    <span className="add-cat">{item.category}</span>
+                    <span className="add-num-tag">{item.num}</span>
+                  </div>
                   <h4 className="add-title">{item.title}</h4>
                   <p className="add-summary">{item.summary}</p>
                   <div className="add-tech">{item.stack.join(" · ")}</div>
                   <div className="add-actions">
                     {item.github && (
-                      <a href={item.github} target="_blank" rel="noopener noreferrer" className="add-link">
+                      <a
+                        href={item.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="add-link"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <FaGithub size={12} /> Source
                       </a>
                     )}
                     {item.link && (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="add-link">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="add-link"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <FaExternalLinkAlt size={11} /> Live Demo
                       </a>
                     )}
@@ -387,7 +498,7 @@ const Projects = () => {
           >
             <div className="modal-header">
               <div className="modal-title-group">
-                <span className="modal-num">{`${activeModalProject.num} // ARCHITECTURAL SPECIFICATION`}</span>
+                <span className="modal-num">{`${activeModalProject.num} // ${isAnalytics ? "DATA ANALYTICS" : "ARCHITECTURAL"} SPECIFICATION`}</span>
                 <h3 id="modal-title" className="modal-title">{activeModalProject.title}</h3>
                 <span className="modal-client">{activeModalProject.client}</span>
               </div>
@@ -401,21 +512,13 @@ const Projects = () => {
             </div>
 
             <div className="modal-body">
-              <div className="modal-img-container">
-                <img
-                  src={activeModalProject.image}
-                  alt={activeModalProject.title}
-                  className="modal-cover-img"
-                />
-              </div>
-
               <div className="modal-content-section">
-                <h4>System Architecture & Engineering Implementation</h4>
+                <h4>{isAnalytics ? "Project Overview & Analytics Scope" : "System Architecture & Engineering Implementation"}</h4>
                 <p className="modal-full-desc">{activeModalProject.description || activeModalProject.summary}</p>
 
                 {activeModalProject.highlights && (
                   <>
-                    <h4>Key Engineering Highlights</h4>
+                    <h4>{isAnalytics ? "Key Analytics & Technical Highlights" : "Key Engineering Highlights"}</h4>
                     <ul className="modal-highlights">
                       {activeModalProject.highlights.map((h, i) => (
                         <li key={i}>{h}</li>
@@ -424,7 +527,7 @@ const Projects = () => {
                   </>
                 )}
 
-                <h4>Production Technology Stack</h4>
+                <h4>{isAnalytics ? "Analytics Tools & Technologies" : "Production Technology Stack"}</h4>
                 <div className="modal-stack-pills">
                   {activeModalProject.stack.map((t) => (
                     <span key={t} className="modal-stack-pill">{t}</span>

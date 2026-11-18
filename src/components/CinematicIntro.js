@@ -183,7 +183,7 @@ const CinematicIntro = ({ onComplete }) => {
       <div className="cinematic-header" style={{ opacity: telemetryOpacity }}>
         <div className="cinematic-telemetry">
           <span className="telemetry-beacon" />
-          <span className="telemetry-mono">SYS.2026 // PRODUCTION_ENV</span>
+          <span className="telemetry-mono">ANALYTICS.2026 // DATA_INSIGHTS</span>
         </div>
       </div>
 
@@ -199,7 +199,7 @@ const CinematicIntro = ({ onComplete }) => {
         {/* Small Tagline */}
         <div className="cinematic-tagline-small visible">
           <span className="mono-bracket">[</span>
-          <span className="mono-label">SOFTWARE DEVELOPMENT ENGINEER</span>
+          <span className="mono-label">DATA ANALYST | REPORTING & BUSINESS INTELLIGENCE</span>
           <span className="mono-bracket">]</span>
         </div>
 
@@ -223,7 +223,7 @@ const CinematicIntro = ({ onComplete }) => {
         {/* Subtitle */}
         <div className="cinematic-subtext visible">
           <p className="cinematic-tag">
-            Reliable Web Applications · Scalable APIs · Database Systems
+            Turning Data Into Insights · Sales Performance · Business Reporting
           </p>
         </div>
 
@@ -265,8 +265,8 @@ const CinematicIntro = ({ onComplete }) => {
 
       {/* Bottom Coordinates Footer */}
       <div className="cinematic-footer-bar" style={{ opacity: telemetryOpacity }}>
-        <div className="telemetry-coord">LOC: 11.278° N, 77.583° E · INDIA</div>
-        <div className="telemetry-tech">JAVA · JAVASCRIPT · REACT · NODE.JS · SQL</div>
+        <div className="telemetry-coord">LOC: ERODE, TAMIL NADU · INDIA</div>
+        <div className="telemetry-tech">EXCEL · SQL · POSTGRESQL · TABLEAU · PYTHON</div>
       </div>
     </div>
   );

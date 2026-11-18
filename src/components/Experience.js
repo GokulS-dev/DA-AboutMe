@@ -11,30 +11,57 @@ const roadMilestones = [
     id: "sakthi",
     milePost: "KM 2025",
     routeCode: "ROUTE 25",
-    period: "2025 — 2026",
+    period: "Nov 2025 – Present",
     role: "Backend Developer (Freelance)",
     company: "Sakthi Auto Component Limited",
     location: "Tiruppur, India",
-    type: "Contract",
+    type: "Freelance",
     accentColor: "#f59e0b",
     accentGlow: "rgba(245, 158, 11, 0.35)",
+    description: [
+      "Developed a digital trial card and workflow management system for multi-department operations.",
+      "Implemented database-driven workflows, REST APIs, dashboards, Excel exports and reporting features.",
+      "Supported structured information management across trial, inspection and document workflows."
+    ]
+  },
+  {
+    id: "crescent",
+    milePost: "KM 2026",
+    routeCode: "ROUTE 26",
+    period: "April 2026 – May 2026",
+    role: "Frontend Developer Intern",
+    company: "Crescent Moon Consulting Services",
+    location: "Erode, Tamil Nadu",
+    type: "Internship",
+    accentColor: "#a855f7",
+    accentGlow: "rgba(168, 85, 247, 0.35)",
+    description: [
+      "Developed frontend components using HTML, CSS and JavaScript for enterprise application workflows.",
+      "Contributed to a Hospital Management System covering patient, appointment, billing and inventory modules.",
+      "Integrated application interfaces with REST APIs to support structured data exchange."
+    ]
   },
   {
     id: "srivyn",
     milePost: "KM 2026",
     routeCode: "ROUTE 26",
-    period: "2026",
-    role: "Software Engineer — Frontend Developer",
-    company: "Srivyn Platforms Pvt Ltd",
+    period: "June 2026 – August 2026",
+    role: "Software Engineer – Frontend Developer",
+    company: "Srivyn Platforms Pvt. Ltd.",
     location: "Hyderabad, Telangana",
-    type: "Contract / Internship",
+    type: "Full-Time",
     accentColor: "#38bdf8",
     accentGlow: "rgba(56, 189, 248, 0.35)",
+    description: [
+      "Developed responsive healthcare application modules using React.js and integrated REST APIs across multiple portals.",
+      "Collaborated with backend developers to validate API responses, troubleshoot application issues and support feature testing.",
+      "Contributed to application workflows, data presentation and release activities."
+    ]
   }
 ];
 
 const Experience = () => {
-  const [activeIdx, setActiveIdx] = useState(1); // default spotlight on most recent role (Srivyn Platforms)
+  const [activeIdx, setActiveIdx] = useState(2); // default spotlight on most recent role (Srivyn Platforms)
 
   return (
     <section id="experience" className="experience-section">
@@ -47,9 +74,9 @@ const Experience = () => {
             <span className="meta-sep">·</span>
             <span className="meta-sub">CHRONOLOGICAL ROAD</span>
           </div>
-          <h2 className="experience-main-heading">The Engineering Road</h2>
+          <h2 className="experience-main-heading">Professional Experience</h2>
           <p className="experience-lead-text">
-            Chronological milestones across industrial automation, API integrations, and healthcare web platforms.
+            Professional milestones across enterprise applications, database-driven workflows, and business systems.
           </p>
         </div>
 
@@ -169,6 +196,14 @@ const Experience = () => {
                       <span className="loc-sep">·</span>
                       <span className="type-badge">{exp.type}</span>
                     </div>
+
+                    {exp.description && (
+                      <ul className="card-experience-desc">
+                        {exp.description.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               );

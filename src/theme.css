@@ -359,6 +359,10 @@ body {
   color: #475569 !important;
 }
 
+[data-theme="light"] .card-experience-desc li {
+  color: #334155 !important;
+}
+
 /* Present Role Status Badge in Light Mode */
 [data-theme="light"] .working-here-pill {
   background: #ffffff !important;
@@ -392,6 +396,42 @@ body {
 
 [data-theme="light"] .collection-counter {
   color: #64748b !important;
+}
+
+[data-theme="light"] .project-category-tabs {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .category-tab-btn {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .category-tab-btn:hover {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .category-tab-btn.active {
+  color: #0f172a !important;
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .category-tab-btn.active .tab-indicator {
+  background: #d97706 !important;
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.4) !important;
+}
+
+[data-theme="light"] .category-count {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #64748b !important;
+}
+
+[data-theme="light"] .category-tab-btn.active .category-count {
+  background: rgba(217, 119, 6, 0.12) !important;
+  color: #b45309 !important;
 }
 
 [data-theme="light"] .coll-arrow-btn {

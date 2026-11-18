@@ -55,6 +55,129 @@
   margin: 0;
 }
 
+/* Category Navigation Controls */
+.category-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.project-category-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 4px;
+  border-radius: 999px;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.category-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.category-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.category-tab-btn.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.category-tab-btn .tab-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+}
+
+.category-tab-btn.active .tab-indicator {
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+}
+
+.category-count {
+  font-size: 0.68rem;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+}
+
+.category-tab-btn.active .category-count {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+/* Card & Modal Status Badges */
+.card-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.card-status-pill .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.modal-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.modal-status-badge .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
 /* Stepper & Circular Arrows */
 .collection-nav-stepper {
   display: flex;
@@ -124,23 +247,19 @@
               margin-top 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Background Image Layer */
+/* Card Background Layer */
 .card-bg-wrap {
   position: absolute;
   inset: 0;
   overflow: hidden;
-}
-
-.card-bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  background: #08080c;
+  pointer-events: none;
 }
 
 .card-scrim-gradient {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
@@ -293,22 +412,12 @@
 
 .deck-card-panel.card-expanded .card-bg-wrap {
   opacity: 1;
-  filter: brightness(0.85) contrast(1.05);
-  transition: opacity 0.6s ease, filter 0.6s ease;
-}
-
-.deck-card-panel.card-expanded .card-bg-image {
-  transform: scale(1.03);
+  background: #08080c;
 }
 
 .deck-card-panel.card-expanded .card-scrim-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(6, 6, 9, 0.45) 0%,
-    rgba(6, 6, 9, 0.2) 28%,
-    rgba(6, 6, 9, 0.78) 65%,
-    rgba(6, 6, 9, 0.98) 100%
-  );
+  background: radial-gradient(circle at 50% 10%, rgba(30, 30, 48, 0.2) 0%, rgba(8, 8, 12, 0) 70%),
+              linear-gradient(180deg, rgba(10, 10, 16, 0.4) 0%, rgba(8, 8, 12, 0.98) 100%);
 }
 
 .expanded-content-layer {
@@ -517,36 +626,37 @@
 }
 
 .additional-card-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #0d0d14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.add-img-wrap {
-  position: relative;
-  aspect-ratio: 16 / 9;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.add-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.additional-card-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-.add-num {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.add-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.add-num-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
-  padding: 2px 6px;
-  border-radius: 4px;
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .add-body {
@@ -784,6 +894,23 @@
 }
 
 @media (max-width: 680px) {
+  .category-nav-bar {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-category-tabs {
+    width: 100%;
+    display: flex;
+  }
+  .category-tab-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    gap: 6px;
+  }
   .expanding-cards-deck {
     flex-direction: column;
     height: auto;

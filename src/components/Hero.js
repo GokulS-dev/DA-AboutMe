@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaCode, FaArrowDown } from "react-icons/fa";
 import profilePhoto from "../assets/IMG_5165.jpeg";
 import "./Hero.css";
 
-const heroTech = ["Java", "JavaScript", "React", "Node.js", "Express", "SQL Server"];
+const heroTech = ["Microsoft Excel", "SQL", "PostgreSQL", "Tableau", "Python"];
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -26,17 +26,17 @@ const Hero = () => {
           {/* Engineering status tag */}
           <div className="hero-status-tag">
             <span className="status-dot-pulse" />
-            <span className="status-text">Available for SDE & Full Stack Roles</span>
+            <span className="status-text">OPEN TO DATA ANALYST & REPORTING ROLES</span>
           </div>
 
           {/* Primary Role Heading */}
           <h1 className="hero-title">
-            Software Development Engineer
+            Data Analyst & Reporting Analyst
           </h1>
 
           {/* Core Elevator Pitch */}
           <p className="hero-description">
-            I build reliable web applications, APIs and database-driven systems.
+            I transform raw data into meaningful insights through Excel reporting, SQL analysis and interactive dashboards.
           </p>
 
           {/* Key Tech Badges */}
@@ -113,12 +113,12 @@ const Hero = () => {
             <div className="hero-floating-card">
               <div className="card-header-mono">
                 <span className="mono-dot" />
-                <span>GOKUL S // DEV-NODE</span>
+                <span>GOKUL S // DATA-ANALYTICS</span>
               </div>
               <div className="card-body-mono">
                 <div className="mono-row">
                   <span className="mono-key">Role:</span>
-                  <span className="mono-val">Full Stack & Systems</span>
+                  <span className="mono-val">Data Analyst</span>
                 </div>
                 <div className="mono-row">
                   <span className="mono-key">Location:</span>

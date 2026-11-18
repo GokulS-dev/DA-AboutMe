@@ -5,68 +5,61 @@ import {
   FaServer,
   FaDatabase
 } from "react-icons/fa";
-import javaIcon from "../icons/java.png";
-import jsIcon from "../icons/javascript.png";
-import reactIcon from "../icons/react.png";
-import nodeIcon from "../icons/nodejs.png";
-import expressIcon from "../icons/express.png";
-import mongoIcon from "../icons/mongodb.png";
 import mysqlIcon from "../icons/mysql.png";
-import awsIcon from "../icons/aws.png";
 import gitIcon from "../icons/git.png";
 import "./TechStack.css";
 
 const techCategories = [
   {
-    id: "languages",
+    id: "core-analytics",
     num: "01",
-    title: "Core Languages",
+    title: "Core Analytics",
     icon: FaCode,
     accentColor: "#f59e0b",
     skills: [
-      { name: "Java", role: "Enterprise OOP", icon: javaIcon },
-      { name: "JavaScript", role: "ES6+ Async", icon: jsIcon },
-      { name: "SQL", role: "Relational Queries", icon: mysqlIcon },
-      { name: "Python", role: "Data & Scripts", textIco: "Py" }
+      { name: "Microsoft Excel", role: "Spreadsheet Analysis", textIco: "XL" },
+      { name: "SQL", role: "Data Querying", icon: mysqlIcon },
+      { name: "Python", role: "Data Analysis", textIco: "Py" },
+      { name: "PostgreSQL", role: "Relational Database", textIco: "PG" }
     ]
   },
   {
-    id: "frontend",
+    id: "data-analysis-reporting",
     num: "02",
-    title: "Frontend Systems",
+    title: "Data Analysis & Reporting",
     icon: FaDesktop,
     accentColor: "#38bdf8",
     skills: [
-      { name: "React.js", role: "Component Architecture", icon: reactIcon },
-      { name: "Context API", role: "State Management", textIco: "Ctx" },
-      { name: "Responsive UI", role: "Cross-Device Systems", textIco: "UI" },
-      { name: "REST Integration", role: "Client-Side APIs", textIco: "API" }
+      { name: "Data Cleaning", role: "Data Preparation", textIco: "DC" },
+      { name: "Data Validation", role: "Data Quality", textIco: "DV" },
+      { name: "KPI Analysis", role: "Performance Measurement", textIco: "KPI" },
+      { name: "MIS Reporting", role: "Operational Reports", textIco: "MIS" }
     ]
   },
   {
-    id: "backend",
+    id: "business-intelligence",
     num: "03",
-    title: "Backend & APIs",
+    title: "Business Intelligence",
     icon: FaServer,
     accentColor: "#10b981",
     skills: [
-      { name: "Node.js", role: "Event-Driven Runtime", icon: nodeIcon },
-      { name: "Express.js", role: "REST Microservices", icon: expressIcon },
-      { name: "Apache Kafka", role: "Event Streaming", textIco: "Kafka" },
-      { name: "JWT & RBAC", role: "Auth Security", textIco: "Auth" }
+      { name: "Tableau", role: "Data Visualization", textIco: "TAB" },
+      { name: "Dashboard Development", role: "KPI Dashboards", textIco: "DB" },
+      { name: "Sales Analysis", role: "Revenue Insights", textIco: "SA" },
+      { name: "Business Reporting", role: "Decision Support", textIco: "BR" }
     ]
   },
   {
-    id: "data-cloud",
+    id: "tools-platforms",
     num: "04",
-    title: "Databases & DevOps",
+    title: "Tools & Platforms",
     icon: FaDatabase,
     accentColor: "#a855f7",
     skills: [
-      { name: "SQL Server", role: "Enterprise Schema", icon: mysqlIcon },
-      { name: "MongoDB", role: "Document Pipelines", icon: mongoIcon },
+      { name: "pgAdmin", role: "Database Management", textIco: "pA" },
       { name: "Git", role: "Version Control", icon: gitIcon },
-      { name: "AWS Cloud", role: "EC2 & S3 Deployment", icon: awsIcon }
+      { name: "GitHub", role: "Project Portfolio", textIco: "GH" },
+      { name: "Microsoft Excel", role: "Reporting Workbooks", textIco: "XL" }
     ]
   }
 ];
@@ -84,7 +77,7 @@ const TechStack = () => {
           </div>
           <h2 className="tech-compact-heading">Technical Arsenal</h2>
           <p className="tech-compact-sub">
-            Curated production technologies across languages, frontend, backend, and cloud databases.
+            Curated production technologies across core analytics, reporting, business intelligence, and data platforms.
           </p>
         </div>
 

@@ -49,7 +49,7 @@ const educationMilestones = [
     degree: "B.E. in Computer Science & Engineering",
     institution: "Kongu Engineering College",
     location: "Perundurai, Erode",
-    score: "7.56 CGPA",
+    score: "7.53 CGPA",
     note: "Data Structures, Algorithms, DBMS, Cloud Computing & SDE Foundations.",
     isGraduated: true,
     statusBadge: "GRADUATED 🎓",
@@ -70,9 +70,9 @@ const About = () => {
             <span className="section-index">04</span>
             <span className="section-label-text">BACKGROUND</span>
           </div>
-          <h2 className="section-headline">About & Foundation</h2>
+          <h2 className="section-headline">About & Analytics Profile</h2>
           <div className="section-sub-strip">
-            Software Development Engineer with a focus on resilient web architecture and human-centric design.
+            Computer Science Engineering graduate focused on data analysis, reporting, and business intelligence.
           </div>
         </div>
 
@@ -81,34 +81,34 @@ const About = () => {
           {/* Left: Bio Column */}
           <div className="about-bio-column">
             <h3 className="about-bio-lead">
-              Computer Science Engineering graduate with professional experience in frontend and full-stack software development.
+              Computer Science Engineering graduate with professional experience in application development and hands-on experience in data analysis, Excel-based reporting, SQL, and data visualization.
             </h3>
 
             <p className="about-bio-p">
-              I specialize in bridging the gap between rigorous system backend architecture and fluid, responsive user experiences. Having built enterprise workflow management tools, examination portals, and healthcare web modules, I am passionate about crafting maintainable, high-impact software.
+              I specialize in transforming raw data into meaningful business insights through data cleaning, spreadsheet analysis, SQL queries, KPI reporting, and dashboard development. My project experience includes sales performance analysis, revenue reporting, regional comparisons, and operational MIS reporting.
             </p>
 
             <p className="about-bio-p">
-              My engineering philosophy revolves around simplicity, type-safety, database efficiency, and thoughtful interactions. When I am not designing APIs or refining UI components, I actively solve algorithmic challenges on LeetCode and explore distributed systems.
+              My analytical approach focuses on data accuracy, structured reporting, and clear communication of insights. I enjoy exploring datasets, identifying performance trends, and presenting information that helps businesses monitor results and make informed decisions.
             </p>
 
             {/* Metrics Grid */}
             <div className="about-metrics-grid">
               <div className="metric-box">
-                <span className="metric-val">3+</span>
-                <span className="metric-lbl">Years Coding</span>
+                <span className="metric-val">1262</span>
+                <span className="metric-lbl">SALES RECORDS ANALYZED</span>
               </div>
               <div className="metric-box">
-                <span className="metric-val">6+</span>
-                <span className="metric-lbl">Systems Shipped</span>
+                <span className="metric-val">900</span>
+                <span className="metric-lbl">MIS ORDER RECORDS</span>
               </div>
               <div className="metric-box">
-                <span className="metric-val">2+</span>
-                <span className="metric-lbl">Hackathon Wins</span>
+                <span className="metric-val">7</span>
+                <span className="metric-lbl">EXCEL DASHBOARD CHARTS</span>
               </div>
               <div className="metric-box">
-                <span className="metric-val">100%</span>
-                <span className="metric-lbl">Production Reliability</span>
+                <span className="metric-val">2</span>
+                <span className="metric-lbl">EXCEL ANALYTICS PROJECTS</span>
               </div>
             </div>
           </div>
@@ -134,15 +134,15 @@ const About = () => {
               <div className="facts-grid-body">
                 <div className="fact-row-item">
                   <span className="fact-label">ROLE</span>
-                  <span className="fact-val">Software Development Engineer</span>
+                  <span className="fact-val">Data Analyst</span>
                 </div>
                 <div className="fact-row-item">
                   <span className="fact-label">STATUS</span>
-                  <span className="fact-val highlight-green">Open to Work · Immediate Joiner</span>
+                  <span className="fact-val highlight-green">Open to Work</span>
                 </div>
                 <div className="fact-row-item">
                   <span className="fact-label">EDUCATION</span>
-                  <span className="fact-val">B.E. Computer Science (7.56 CGPA)</span>
+                  <span className="fact-val">B.E. Computer Science (7.53 CGPA)</span>
                 </div>
                 <div className="fact-row-item">
                   <span className="fact-label">ALMA MATER</span>
@@ -154,11 +154,11 @@ const About = () => {
                 </div>
                 <div className="fact-row-item">
                   <span className="fact-label">SPECIALTY</span>
-                  <span className="fact-val">Full Stack · APIs · DB Architecture</span>
+                  <span className="fact-val">Data Analytics & Business Reporting</span>
                 </div>
                 <div className="fact-row-item">
                   <span className="fact-label">CORE TOOLS</span>
-                  <span className="fact-val tech-inline-tags">Java · React · Node.js · SQL · Kafka</span>
+                  <span className="fact-val tech-inline-tags">Excel · SQL · PostgreSQL · Tableau · Python</span>
                 </div>
               </div>
 
@@ -168,7 +168,7 @@ const About = () => {
                   <span className="beacon-ping" />
                   <span className="beacon-dot" />
                 </div>
-                <span className="footer-status-text">AVAILABLE FOR FULL-TIME SDE ROLES</span>
+                <span className="footer-status-text">AVAILABLE FOR DATA ANALYST & REPORTING ROLES</span>
               </div>
             </div>
           </div>
