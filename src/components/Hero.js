@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaCode, FaArrowDown } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
 import profilePhoto from "../assets/IMG_5165.jpeg";
 import "./Hero.css";
 
@@ -82,16 +82,6 @@ const Hero = () => {
             >
               <FaLinkedin size={16} />
               <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://leetcode.com/u/S_Gokul19/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-social-link"
-              aria-label="LeetCode Profile"
-            >
-              <FaCode size={16} />
-              <span>LeetCode</span>
             </a>
           </div>
         </div>

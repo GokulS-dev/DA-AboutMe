@@ -3,7 +3,7 @@ import { FaDownload, FaExternalLinkAlt, FaTimes, FaFilePdf } from "react-icons/f
 import "./ResumeModal.css";
 
 const ResumeModal = ({ isOpen, onClose }) => {
-  const resumeUrl = "/Gokul_BE.pdf";
+  const resumeUrl = "/Gokul_MRA.pdf";
 
   useEffect(() => {
     if (isOpen) {
@@ -35,15 +35,15 @@ const ResumeModal = ({ isOpen, onClose }) => {
           <div className="resume-title-wrap">
             <FaFilePdf size={18} className="pdf-icon" />
             <div>
-              <h3 id="resume-title" className="resume-filename">Gokul_BE.pdf</h3>
-              <span className="resume-meta">Software Development Engineer · Curriculum Vitae</span>
+              <h3 id="resume-title" className="resume-filename">Gokul_MRA.pdf</h3>
+              <span className="resume-meta">Data Analyst · Curriculum Vitae</span>
             </div>
           </div>
 
           <div className="resume-actions-group">
             <a
               href={resumeUrl}
-              download="Gokul_BE.pdf"
+              download="Gokul_MRA.pdf"
               className="resume-btn download"
               aria-label="Download Resume PDF"
             >
